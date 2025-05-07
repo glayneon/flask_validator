@@ -14,6 +14,7 @@ def validate():
         # Check if environment is prod
         return jsonify({
             "response": {
+		"Kind": "AdmissionReview",
                 "uid": uid,
                 "allowed": False,
                 "status": {
@@ -31,5 +32,5 @@ def validate():
     })
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=443, ssl_context=('/certs/tls.crt', '/certs/tls.key'))
-    # app.run(host='0.0.0.0', port=80)
+    # app.run(host='0.0.0.0', port=443, ssl_context=('/certs/tls.crt', '/certs/tls.key'))
+    app.run(host='0.0.0.0', port=80)
